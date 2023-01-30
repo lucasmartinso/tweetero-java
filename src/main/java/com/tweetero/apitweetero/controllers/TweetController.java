@@ -1,8 +1,13 @@
 package com.tweetero.apitweetero.controllers;
 
+import java.util.stream.Stream;
+
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,5 +36,10 @@ public class TweetController {
         }
 
         return ResponseEntity.ok("OK");
+    }
+
+    @GetMapping("/tweet/{username}")
+    public ResponseEntity listAllUserTweets(@PathVariable String username) { 
+        ResponseEntity.status(200).body(null);
     }
 }
