@@ -7,8 +7,6 @@ import com.tweetero.apitweetero.dto.UserDTO;
 import com.tweetero.apitweetero.model.User;
 import com.tweetero.apitweetero.repositories.UserRepository;
 
-import jakarta.validation.OverridesAttribute.List;
-
 @Service
 public class UserService {
     
