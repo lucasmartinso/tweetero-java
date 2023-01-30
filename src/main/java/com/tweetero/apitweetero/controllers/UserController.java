@@ -10,24 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tweetero.apitweetero.dto.UserDTO;
 import com.tweetero.apitweetero.model.User;
-import com.tweetero.apitweetero.repositories.UserRepository;
 import com.tweetero.apitweetero.services.UserService;
 
 import jakarta.validation.Valid;
-import jakarta.validation.OverridesAttribute.List;
-
-import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
-@RequestMapping("/sign-up")
+@RequestMapping
 @CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired
     private UserService service;
     
-    @PostMapping("")
+    @PostMapping("/sign-up")
     public ResponseEntity signUp(@RequestBody @Valid UserDTO req) { 
         User created = service.SignUp(req);
 
