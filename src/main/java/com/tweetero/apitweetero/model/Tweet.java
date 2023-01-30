@@ -1,6 +1,12 @@
 package com.tweetero.apitweetero.model;
 
+import com.tweetero.apitweetero.dto.TweetDTO;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,8 +14,19 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 public class Tweet {
-    // public Tweet() { 
-    //     this.username = 
-    //     this.tweet
-    // }
+
+    public Tweet(TweetDTO data) { 
+        this.username = data.username();
+        this.tweet = data.tweet();
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(length = 50, nullable = false)
+    private String username; 
+
+    @Column(length = 300, nullable = false) 
+    private String tweet; 
 }
