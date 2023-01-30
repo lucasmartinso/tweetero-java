@@ -25,7 +25,7 @@ public class UserController {
     
     @PostMapping("/sign-up")
     public ResponseEntity signUp(@RequestBody @Valid UserDTO req) { 
-        User created = service.SignUp(req);
+        User created = service.signUp(req);
 
         if(created == null) { 
             ResponseEntity.status(409).build();

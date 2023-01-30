@@ -1,7 +1,6 @@
 package com.tweetero.apitweetero.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.tweetero.apitweetero.dto.UserDTO;
@@ -16,7 +15,7 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    public User SignUp(UserDTO userData) { 
+    public User signUp(UserDTO userData) { 
         User user = repository.findByUsername(userData.username());
 
         if(user!=null) { 
