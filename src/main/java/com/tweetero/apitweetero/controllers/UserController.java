@@ -31,6 +31,6 @@ public class UserController {
             ResponseEntity.status(409).build();
         }
 
-        return ResponseEntity.status(201).build();
+        return ResponseEntity.ok("OK");
     }
 }
